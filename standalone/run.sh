@@ -6,5 +6,5 @@ then
     exit 1
 fi
 
-protoc --descriptor_set_out wiremock-data/grpc/services.dsc ExampleServices.proto
-java -cp wiremock-standalone-3.2.0.jar:wiremock-grpc-extension-standalone-0.1.0.jar wiremock.Run --port 8000 --root-dir wiremock-data
+protoc --include_imports --descriptor_set_out wiremock-data/grpc/services.dsc ExampleServices.proto
+java -cp wiremock-standalone-3.2.0.jar:wiremock-grpc-extension-standalone-0.2.0.jar wiremock.Run --port 8000 --root-dir wiremock-data
